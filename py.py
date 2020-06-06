@@ -1,5 +1,6 @@
 import discord
 import requests
+import os
 
 client = discord.Client()
 
@@ -25,4 +26,5 @@ async def on_message(message):
 		embed2.add_field(name='key : ', value='```' + source + '```', inline=False)
 		await message.author.send(embed=embed2)
 
-client.run("NzE4Mzk3MjM1OTY4MjEzMDAz.Xtovjg.pOQO3xll63GytT_es34S-YC9GTw")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
